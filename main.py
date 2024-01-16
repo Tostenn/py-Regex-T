@@ -1,4 +1,4 @@
-from repertoire import cmds,effter,__conten_fic__,textToLine
+from repertoire import cmds,effter,__conten_fic__,textToLine # ce module est uniquement disponible pour les client prenium
 from re import findall
 from time import time
 effter()
