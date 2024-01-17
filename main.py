@@ -1,4 +1,11 @@
-from repertoire import cmds,effter,__conten_fic__,textToLine # ce module est uniquement disponible pour les client prenium
+try:
+    # ce module est uniquement disponible pour les client prenium
+    from repertoire import cmds,effter,__conten_fic__,textToLine 
+except:
+    print('vous ne disposer pas du module repertoire\n\
+          Vous pouvez coder tout les fonctions manquantes\
+          ou me contacter pour une meilleur approche')
+    exit()
 from re import findall
 from time import time
 effter()
@@ -43,6 +50,7 @@ files = cmds(f'dir /b {files}').splitlines()
 container = ''
 for file in files:
     content = __conten_fic__(file)
+    if not content: continue # pass if le fichier est binaire
     regs = set(findall(reg,content))
     for _ in regs:
         line = [str(i) for i in textToLine(content,_)]

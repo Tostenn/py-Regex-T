@@ -8,7 +8,8 @@ __py-Regex-T__ se présente comme un programme sophistiqué développé en __Pyt
 
 # Utilisation 
 
-```
+```bash
 git clone https://github.com/Tostenn/py-Regex-T.git
+cd py-Regex-T
 python main.py
 ```
