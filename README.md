@@ -8,7 +8,7 @@
 __py-Regex-T__ se présente comme un programme sophistiqué développé en __Python__, spécifiquement élaboré pour la recherche approfondie de données au sein de fichiers. Grâce à l'utilisation judicieuse des __expressions régulières__, ce programme offre une approche puissante et flexible pour l'analyse et l'extraction ciblée d'informations à partir de divers types de __fichiers__.
 
 # Test
-<img src="img/ex.jpeg">
+<img style="border-radius: 5px;" src="img/ex.jpeg">
 
 # Utilisation 
 
@@ -27,7 +27,11 @@ Vous avez la possibilité d'utiliser également l'outil classique __findstr__ de
 ```bash
 python findstr.py
 ```
+<img style="border-radius: 20px;" src="img/Capture d’écran 2024-01-18 104653.png">
+
 ou une approche plus classique 
+
 ```bash
-re.bat
+py-Regex-T.bat
 ```
+<img style="border-radius: 20px;" src="img/Capture d’écran 2024-01-18 123337.png">
