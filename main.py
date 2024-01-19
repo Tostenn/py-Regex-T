@@ -8,6 +8,9 @@ except:
     exit()
 from re import findall
 from time import time
+from PIL import Image
+from pytesseract import image_to_string,pytesseract
+
 effter()
 
 # couleur -------------
@@ -24,6 +27,22 @@ color = {
 def resltat(title:str='expression reguliére',_:str = '',cl:str=color['or']) -> str:
     '''formatage du texte'''
     return f'{color['gr']}{f"{color['bl']}{title}{color['gr']}":-^88}\n|{'': ^65}|\n|{f'{cl}{_}{color['gr']}': ^87}|\n|{'': ^65}|\n{f'{color["fr"]}T_xOx_T{color['gr']}':-^88}{color['bl']}'
+
+
+# Spécifiez le chemin d'accès à l'exécutable Tesseract OCR 
+# (changez cela selon votre installation)
+pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
+EXT_IMG = ['png','jpg','jpeg']
+def imgToText(image_path):
+    '''extrait le texte d'une image'''
+    # Ouvrir l'image
+    image = Image.open(image_path)
+
+    # Utiliser Tesseract OCR pour extraire le texte de l'image
+    text = image_to_string(image)
+
+    return text
+
 
 reg = input('entrer un expression reguliére : ')
 
@@ -45,11 +64,14 @@ t1 = time()
 print(resltat(_=f'{reg} ==> {files}')) 
 
 # recuperation des fichiers -----------------
-files = cmds(f'dir /b {files}').splitlines() 
-
+files = cmds(f'dir {dir}').splitlines() 
+regFile = r'[\S ]+\.(?=(png|jpg|jpeg))'
 container = ''
 for file in files:
-    content = __conten_fic__(file)
+    if findall(regFile,file):content = imgToText(file)
+    else : 
+        try:content = __conten_fic__(file)
+        except:content = ''
     if not content: continue # pass if le fichier est binaire
     regs = set(findall(reg,content))
     for _ in regs:

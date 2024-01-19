@@ -10,9 +10,15 @@ __py-Regex-T__ se présente comme un programme sophistiqué développé en __Pyt
 # Test
 <img style="border-radius: 5px;" src="img/ex.jpeg">
 
+# <b style="text-transform:capitalize">dependence</b>
+
++ pytesseract
++ Pillow
+
 # Utilisation 
 
 ```bash
+pip install pytesseract Pillow
 git clone https://github.com/Tostenn/py-Regex-T.git
 cd py-Regex-T
 python main.py
@@ -27,11 +33,11 @@ Vous avez la possibilité d'utiliser également l'outil classique __findstr__ de
 ```bash
 python findstr.py
 ```
-<img style="border-radius: 20px;" src="img/Capture d’écran 2024-01-18 104653.png">
+<img style="border-radius: 20px;" src="img//consoleFindstr.png">
 
 ou une approche plus classique 
 
 ```bash
 py-Regex-T.bat
 ```
-<img style="border-radius: 20px;" src="img/Capture d’écran 2024-01-18 123337.png">
+<img style="border-radius: 20px;" src="img/batch.png">
