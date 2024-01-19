@@ -1,6 +1,6 @@
 try:
     # ce module est uniquement disponible pour les client prenium
-    from repertoire import cmds,effter,__conten_fic__,textToLine 
+    from fonction.fonction import cmds,effter,__conten_fic__,textToLine 
 except:
     print('vous ne disposer pas du module repertoire\n\
           Vous pouvez coder tout les fonctions manquantes\
